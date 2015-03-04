@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\FlowerPower.cs" />
+     <Compile Include="Assets\Scripts\FlowerWall.cs" />
      <Compile Include="Assets\Scripts\PhysicsControl.cs" />
+     <Compile Include="Assets\Scripts\TextStuff.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
