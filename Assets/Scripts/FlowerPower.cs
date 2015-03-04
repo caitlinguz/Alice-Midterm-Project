@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class FlowerPower : MonoBehaviour {
 
 	public bool hasFlower = false;
-	public Collider flowerActivator; 
+	public Collider flowerActivator;
+	public Text uiText;
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +15,11 @@ public class FlowerPower : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if ( hasFlower == true ) {
-			Destroy ( gameObject );
-		}
+
 	}
 
 	void OnTriggerEnter ( Collider activator ) {
 		hasFlower = true;
+		uiText.text = "You got the flower! Unite the lovers!";
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FlowerWall : MonoBehaviour {
+public class FlowerDestroy : MonoBehaviour {
 
 	public GameObject flowerObject;
 	FlowerPower flowerScript;
@@ -13,11 +13,12 @@ public class FlowerWall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 		flowerScript = flowerObject.GetComponent<FlowerPower>();
 
-		if (flowerScript.hasFlower){
-			Destroy(gameObject);
+		if ( flowerScript.hasFlower == true ) {
+			Destroy ( gameObject );
 		}
+	
 	}
 }
