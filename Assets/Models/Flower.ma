@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: Flower.ma
-//Last modified: Mon, Mar 02, 2015 04:44:38 PM
+//Last modified: Sun, Mar 08, 2015 08:40:56 PM
 //Codeset: UTF-8
 requires maya "2015";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -14,12 +14,12 @@ fileInfo "osv" "Mac OS X 10.9.2";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.7130412059559887 16.926258951105382 -1.4071079102664346 ;
-	setAttr ".r" -type "double3" -82.538352729589377 -129.39999999995877 0 ;
+	setAttr ".t" -type "double3" 8.1210708988639322 20.609530752546132 25.836187739114376 ;
+	setAttr ".r" -type "double3" -29.738352729588279 21.800000000041887 -2.5691463908627719e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 17.070814418894834;
+	setAttr ".coi" 35.309025934828796;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -67,10 +67,14 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -n "pTorus1";
 	setAttr ".t" -type "double3" 0.23366753596602408 0.83108101498966636 1.9912169845028616 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pTorusShape1" -p "pTorus1";
+createNode transform -n "transform16" -p "pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pTorusShape1" -p "transform16";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -85,10 +89,14 @@ createNode transform -n "group";
 	setAttr ".sp" -type "double3" 0.25598176042651211 0.83108087633814753 1.8018409589678055 ;
 createNode transform -n "pasted__pTorus1" -p "group";
 	setAttr ".t" -type "double3" 0.25598187597322131 0.83108101498966636 1.8018413918940621 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pasted__pTorusShape1" -p "pasted__pTorus1";
+createNode transform -n "transform15" -p "pasted__pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pTorusShape1" -p "transform15";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -108,10 +116,14 @@ createNode transform -n "pasted__group" -p "group1";
 	setAttr ".sp" -type "double3" 0.25598176042651211 0.83108087633814753 1.8018409589678055 ;
 createNode transform -n "pasted__pasted__pTorus1" -p "pasted__group";
 	setAttr ".t" -type "double3" 0.25598187597322131 0.83108101498966636 1.8018413918940621 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pasted__pasted__pTorusShape1" -p "pasted__pasted__pTorus1";
+createNode transform -n "transform14" -p "pasted__pasted__pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pTorusShape1" -p "transform14";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -136,10 +148,14 @@ createNode transform -n "pasted__pasted__group" -p "pasted__group1";
 	setAttr ".sp" -type "double3" 0.25598176042651211 0.83108087633814753 1.8018409589678055 ;
 createNode transform -n "pasted__pasted__pasted__pTorus1" -p "pasted__pasted__group";
 	setAttr ".t" -type "double3" 0.32341570249116325 0.8310810149896668 2.10438724848491 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pasted__pasted__pasted__pTorusShape1" -p "pasted__pasted__pasted__pTorus1";
+createNode transform -n "transform13" -p "pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pasted__pTorusShape1" -p "transform13";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -169,10 +185,14 @@ createNode transform -n "pasted__pasted__pasted__group" -p "pasted__pasted__grou
 	setAttr ".sp" -type "double3" 0.25598176042651211 0.83108087633814753 1.8018409589678055 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pTorus1" -p "pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" 0.31943948304973413 0.8310810149896668 2.2064438805061459 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pTorusShape1" -p "pasted__pasted__pasted__pasted__pTorus1";
+createNode transform -n "transform12" -p "pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pasted__pasted__pTorusShape1" -p "transform12";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -207,10 +227,14 @@ createNode transform -n "pasted__pasted__pasted__pasted__group" -p "pasted__past
 	setAttr ".sp" -type "double3" 0.25598176042651211 0.83108087633814753 1.8018409589678055 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pTorus1" -p "pasted__pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" 0.41980015697908518 0.83108101498966713 2.2066145757878095 ;
-	setAttr ".r" -type "double3" -12.570888069266006 0 0 ;
+	setAttr ".r" -type "double3" -12.570888069266008 0 0 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
-createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pTorusShape1" -p "pasted__pasted__pasted__pasted__pasted__pTorus1";
+createNode transform -n "transform11" -p "pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
+createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pTorusShape1" -p "transform11";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -253,9 +277,13 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
 	setAttr ".t" -type "double3" 0.36582101936303985 0.83108101498966702 2.1540454231211377 ;
 	setAttr ".r" -type "double3" -12.841512130699305 -11.686992649251275 2.6438118977922782 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform10" -p "pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform10";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -338,9 +366,13 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".t" -type "double3" 0.45711077449054149 0.83108101498966702 2.1036679450290463 ;
 	setAttr ".r" -type "double3" -14.916077152111777 -32.269320368731641 8.0943319900056849 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform9" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform9";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -350,7 +382,7 @@ createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTor
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "group8";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__group7" -p "group8";
@@ -392,11 +424,15 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1" 
 		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" 0.33857803949427762 0.83108101498966747 2.2883737311231687 ;
-	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.2745715226247691 ;
+	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.27457152262477 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform8" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform8";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -411,7 +447,7 @@ createNode transform -n "group9";
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__group8" -p "group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__group7" -p "pasted__group8";
@@ -454,11 +490,15 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1" 
 		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" 0.33857803949427762 0.83108101498966747 2.2883737311231687 ;
-	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.2745715226247691 ;
+	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.27457152262477 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform7" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform7";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -478,7 +518,7 @@ createNode transform -n "pasted__group9" -p "group10";
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__pasted__group8" -p "pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__group7" -p "pasted__pasted__group8";
@@ -522,11 +562,15 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1" 
 		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" -0.17112365392027801 0.83108101498966724 2.5754180158414548 ;
-	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.2745715226247691 ;
+	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.27457152262477 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform6" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform6";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -551,7 +595,7 @@ createNode transform -n "pasted__pasted__group9" -p "pasted__group10";
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__pasted__pasted__group8" -p "pasted__pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__pasted__group7" -p "pasted__pasted__pasted__group8";
@@ -598,9 +642,13 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".t" -type "double3" -1.4086851371195472 0.83108101498966669 2.2970720284069466 ;
 	setAttr ".r" -type "double3" -16.506621120380331 -40.001851904511639 10.785089187319391 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform5" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform5";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -628,7 +676,7 @@ createNode transform -n "pasted__pasted__pasted__group9" -p "|group12|pasted__gr
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__pasted__pasted__pasted__group8" -p "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__group7" -p "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8";
@@ -674,11 +722,15 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1" 
 		-p "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group";
 	setAttr ".t" -type "double3" -0.66234961146630644 0.83108101498966669 2.7148253205846675 ;
-	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.2745715226247691 ;
+	setAttr ".r" -type "double3" -13.61617517034319 -22.403856395838478 5.27457152262477 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform4" -p "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform4";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -708,7 +760,7 @@ createNode transform -n "pasted__pasted__pasted__group9" -p "|group13|pasted__gr
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__pasted__pasted__pasted__group8" -p "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__group7" -p "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8";
@@ -756,9 +808,13 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".t" -type "double3" -1.6145855327067618 0.83108101498966669 1.907375793922039 ;
 	setAttr ".r" -type "double3" -15.593863000764285 -35.938269677408634 9.3025158835526991 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform3" -p "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform3";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -793,7 +849,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__group9" -p "pasted__pas
 	setAttr ".sp" -type "double3" 0.20200676406363094 0.83108087434092393 -1.880603417002515 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__group8" -p "pasted__pasted__pasted__pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group7" 
@@ -842,9 +898,13 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".t" -type "double3" -1.5658600382833094 0.83108101498966691 1.7562303279494607 ;
 	setAttr ".r" -type "double3" -15.748384297553947 -36.687716257636602 9.5634393591090827 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform2" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform2";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -884,7 +944,7 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__group9" -p "pas
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__group8" 
 		-p "pasted__pasted__pasted__pasted__pasted__group9";
 	setAttr ".t" -type "double3" 0.71033016640231006 0 0 ;
-	setAttr ".r" -type "double3" 0 -37.600902062997733 0 ;
+	setAttr ".r" -type "double3" 0 -37.60090206299774 0 ;
 	setAttr ".rp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 	setAttr ".sp" -type "double3" -0.54334603189858566 0.83108087863050484 -1.6639477822266118 ;
 createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__group7" 
@@ -933,9 +993,24 @@ createNode transform -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted_
 	setAttr ".t" -type "double3" -2.019810789292916 0.83108101498966735 1.3456961247014609 ;
 	setAttr ".r" -type "double3" -16.440413188730748 -39.733772004562915 10.681803969981765 ;
 	setAttr ".s" -type "double3" 0.48463802423720082 1.3791689865191619 0.94943325851354088 ;
+createNode transform -n "transform1" -p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+	setAttr ".v" no;
 createNode mesh -n "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1" 
-		-p "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1";
+		-p "transform1";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "pTorus2";
+createNode mesh -n "pTorus2Shape" -p "pTorus2";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -1218,6 +1293,126 @@ createNode script -n "uiConfigurationScriptNode";
 createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode polyUnite -n "polyUnite1";
+	setAttr -s 16 ".ip";
+	setAttr -s 16 ".im";
+createNode groupId -n "groupId1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId2";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId4";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId6";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId8";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId10";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId11";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId12";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId13";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts7";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId14";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId15";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId16";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId17";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId18";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId19";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts10";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId20";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId21";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts11";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId22";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId23";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts12";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId24";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId25";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts13";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId26";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId27";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts14";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId28";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId29";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts15";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId30";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId31";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts16";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:399]";
+createNode groupId -n "groupId32";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId33";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts17";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:6399]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1230,8 +1425,9 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
-	setAttr -s 16 ".dsm";
+	setAttr -s 33 ".dsm";
 	setAttr ".ro" yes;
+	setAttr -s 33 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
@@ -1246,35 +1442,123 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-connectAttr "polyTorus1.out" "pTorusShape1.i";
-connectAttr "pasted__polyTorus1.out" "pasted__pTorusShape1.i";
-connectAttr "pasted__pasted__polyTorus1.out" "pasted__pasted__pTorusShape1.i";
-connectAttr "pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupParts1.og" "pTorusShape1.i";
+connectAttr "groupId1.id" "pTorusShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pTorusShape1.iog.og[0].gco";
+connectAttr "groupId2.id" "pTorusShape1.ciog.cog[0].cgid";
+connectAttr "groupParts2.og" "pasted__pTorusShape1.i";
+connectAttr "groupId3.id" "pasted__pTorusShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pasted__pTorusShape1.iog.og[0].gco";
+connectAttr "groupId4.id" "pasted__pTorusShape1.ciog.cog[0].cgid";
+connectAttr "groupParts3.og" "pasted__pasted__pTorusShape1.i";
+connectAttr "groupId5.id" "pasted__pasted__pTorusShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pTorusShape1.iog.og[0].gco"
 		;
-connectAttr "pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId6.id" "pasted__pasted__pTorusShape1.ciog.cog[0].cgid";
+connectAttr "groupParts4.og" "pasted__pasted__pasted__pTorusShape1.i";
+connectAttr "groupId7.id" "pasted__pasted__pasted__pTorusShape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId8.id" "pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupParts5.og" "pasted__pasted__pasted__pasted__pTorusShape1.i";
+connectAttr "groupId9.id" "pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId10.id" "pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupParts6.og" "pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId11.id" "pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId12.id" "pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupParts7.og" "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr "groupId13.id" "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
 		;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
 		;
+connectAttr "groupId14.id" "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts8.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId15.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId16.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts9.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId17.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId18.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts10.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId19.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId20.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts11.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId21.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId22.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts12.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId23.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId24.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts13.og" "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId25.id" "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId26.id" "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts14.og" "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId27.id" "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId28.id" "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts15.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId29.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId30.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts16.og" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.i"
+		;
+connectAttr "groupId31.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gid"
+		;
+connectAttr ":initialShadingGroup.mwc" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0].gco"
+		;
+connectAttr "groupId32.id" "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0].cgid"
+		;
+connectAttr "groupParts17.og" "pTorus2Shape.i";
+connectAttr "groupId33.id" "pTorus2Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "pTorus2Shape.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -1286,34 +1570,199 @@ connectAttr ":miDefaultOptions.msg" ":mentalrayItemsList.opt" -na;
 connectAttr ":miDefaultFramebuffer.msg" ":mentalrayItemsList.fb" -na;
 connectAttr ":miDefaultOptions.msg" ":mentalrayGlobals.opt";
 connectAttr ":miDefaultFramebuffer.msg" ":mentalrayGlobals.fb";
+connectAttr "pTorusShape1.o" "polyUnite1.ip[0]";
+connectAttr "pasted__pTorusShape1.o" "polyUnite1.ip[1]";
+connectAttr "pasted__pasted__pTorusShape1.o" "polyUnite1.ip[2]";
+connectAttr "pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[3]";
+connectAttr "pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[4]";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[5]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[6]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[7]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[8]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[9]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[10]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[11]"
+		;
+connectAttr "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[12]"
+		;
+connectAttr "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[13]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[14]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.o" "polyUnite1.ip[15]"
+		;
+connectAttr "pTorusShape1.wm" "polyUnite1.im[0]";
+connectAttr "pasted__pTorusShape1.wm" "polyUnite1.im[1]";
+connectAttr "pasted__pasted__pTorusShape1.wm" "polyUnite1.im[2]";
+connectAttr "pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[3]";
+connectAttr "pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[4]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[5]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[6]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[7]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[8]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[9]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[10]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[11]"
+		;
+connectAttr "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[12]"
+		;
+connectAttr "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[13]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[14]"
+		;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.wm" "polyUnite1.im[15]"
+		;
+connectAttr "polyTorus1.out" "groupParts1.ig";
+connectAttr "groupId1.id" "groupParts1.gi";
+connectAttr "pasted__polyTorus1.out" "groupParts2.ig";
+connectAttr "groupId3.id" "groupParts2.gi";
+connectAttr "pasted__pasted__polyTorus1.out" "groupParts3.ig";
+connectAttr "groupId5.id" "groupParts3.gi";
+connectAttr "pasted__pasted__pasted__polyTorus1.out" "groupParts4.ig";
+connectAttr "groupId7.id" "groupParts4.gi";
+connectAttr "pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts5.ig";
+connectAttr "groupId9.id" "groupParts5.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts6.ig"
+		;
+connectAttr "groupId11.id" "groupParts6.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts7.ig"
+		;
+connectAttr "groupId13.id" "groupParts7.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts8.ig"
+		;
+connectAttr "groupId15.id" "groupParts8.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts9.ig"
+		;
+connectAttr "groupId17.id" "groupParts9.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts10.ig"
+		;
+connectAttr "groupId19.id" "groupParts10.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts11.ig"
+		;
+connectAttr "groupId21.id" "groupParts11.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts12.ig"
+		;
+connectAttr "groupId23.id" "groupParts12.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus1.out" "groupParts13.ig"
+		;
+connectAttr "groupId25.id" "groupParts13.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "groupParts14.ig"
+		;
+connectAttr "groupId27.id" "groupParts14.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "groupParts15.ig"
+		;
+connectAttr "groupId29.id" "groupParts15.gi";
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__polyTorus2.out" "groupParts16.ig"
+		;
+connectAttr "groupId31.id" "groupParts16.gi";
+connectAttr "polyUnite1.out" "groupParts17.ig";
+connectAttr "groupId33.id" "groupParts17.gi";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
 		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group12|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|group13|pasted__group11|pasted__pasted__group10|pasted__pasted__pasted__group9|pasted__pasted__pasted__pasted__group8|pasted__pasted__pasted__pasted__pasted__group7|pasted__pasted__pasted__pasted__pasted__pasted__group5|pasted__pasted__pasted__pasted__pasted__pasted__pasted__group4|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group2|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group1|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__group|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1|transform3|pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.iog.og[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorusShape1.ciog.cog[0]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "pTorus2Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId4.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId5.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId7.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId8.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId10.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId11.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId12.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId13.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId14.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId23.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId25.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId33.msg" ":initialShadingGroup.gn" -na;
 // End of Flower.ma

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FlowerWall : MonoBehaviour {
 
-	public GameObject flowerObject;
+	public GameObject flowerTrigger;
 	FlowerPower flowerScript;
 
 	// Use this for initialization
@@ -14,7 +14,7 @@ public class FlowerWall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		flowerScript = flowerObject.GetComponent<FlowerPower>();
+		flowerScript = flowerTrigger.GetComponent<FlowerPower>();
 
 		if (flowerScript.hasFlower){
 			Destroy(gameObject);

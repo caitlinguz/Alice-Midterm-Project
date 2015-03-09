@@ -4,9 +4,8 @@ using System.Collections;
 public class PhysicsControl : MonoBehaviour {
 
 	public float speed = 5f;
-	public float turnspeed = 45f;
-	public float jumpheight = 10f;
-	public float jumpspeed = 5f;
+	public float turnSpeed = 10f;
+	public float jumpHeight = 10f;
 	public Rigidbody player;
 
 	// Use this for initialization
@@ -26,10 +25,11 @@ public class PhysicsControl : MonoBehaviour {
 		//player.AddForce ( transform.right * speed * Input.GetAxis ( "Horizontal"));
 
 		// TURNING
-		transform.Rotate ( 0f, Input.GetAxis ("Horizontal") * turnspeed, 0f);
+		transform.Rotate ( 0f, Input.GetAxis ("Horizontal") * turnSpeed, 0f);
 
+		// JUMPING
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			transform.position += new Vector3 (0f,jumpheight,0f) * Time.deltaTime * jumpspeed;
+			player.AddForce (transform.up * jumpHeight);
 		}
 	}
 }

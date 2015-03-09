@@ -149,6 +149,23 @@ ModelImporter:
     100276: pasted__pasted__pTorus1
     100278: pasted__pTorus1
     100280: pTorus1
+    100282: pTorus2
+    100284: transform1
+    100286: transform10
+    100288: transform11
+    100290: transform12
+    100292: transform13
+    100294: transform14
+    100296: transform15
+    100298: transform16
+    100300: transform2
+    100302: transform3
+    100304: transform4
+    100306: transform5
+    100308: transform6
+    100310: transform7
+    100312: transform8
+    100314: transform9
     400000: //RootNode
     400002: group
     400004: group1
@@ -295,6 +312,23 @@ ModelImporter:
     400276: pasted__pasted__pTorus1
     400278: pasted__pTorus1
     400280: pTorus1
+    400282: pTorus2
+    400284: transform1
+    400286: transform10
+    400288: transform11
+    400290: transform12
+    400292: transform13
+    400294: transform14
+    400296: transform15
+    400298: transform16
+    400300: transform2
+    400302: transform3
+    400304: transform4
+    400306: transform5
+    400308: transform6
+    400310: transform7
+    400312: transform8
+    400314: transform9
     2300000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     2300002: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     2300004: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
@@ -312,6 +346,7 @@ ModelImporter:
     2300026: pasted__pasted__pTorus1
     2300028: pasted__pTorus1
     2300030: pTorus1
+    2300032: pTorus2
     3300000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     3300002: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     3300004: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
@@ -329,6 +364,7 @@ ModelImporter:
     3300026: pasted__pasted__pTorus1
     3300028: pasted__pTorus1
     3300030: pTorus1
+    3300032: pTorus2
     4300000: pTorus1
     4300002: pasted__pTorus1
     4300004: pasted__pasted__pTorus1
@@ -345,6 +381,7 @@ ModelImporter:
     4300026: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     4300028: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
     4300030: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pTorus1
+    4300032: pTorus2
     9500000: //RootNode
   materials:
     importMaterials: 1

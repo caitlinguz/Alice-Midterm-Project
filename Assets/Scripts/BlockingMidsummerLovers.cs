@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BlockingMidsummerLovers : MonoBehaviour {
 
 	public Collider blockingMidsummer;
-	public GameObject flowerObject;
+	public GameObject flowerTrigger;
 	FlowerPower flowerScript;
 	public Text uiText;
 
@@ -21,7 +21,7 @@ public class BlockingMidsummerLovers : MonoBehaviour {
 
 	void OnTriggerEnter ( Collider activator ) {
 
-		flowerScript = flowerObject.GetComponent<FlowerPower>();
+		flowerScript = flowerTrigger.GetComponent<FlowerPower>();
 		
 		if (flowerScript.hasFlower){
 			uiText.text = "You got the flower! The humans are in love now!";

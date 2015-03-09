@@ -48,10 +48,19 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BlockingMidsummerLovers.cs" />
      <Compile Include="Assets\Scripts\EndText.cs" />
+     <Compile Include="Assets\Scripts\FirstHomeBlock.cs" />
      <Compile Include="Assets\Scripts\FlowerDestroy.cs" />
      <Compile Include="Assets\Scripts\FlowerPower.cs" />
      <Compile Include="Assets\Scripts\FlowerWall.cs" />
+     <Compile Include="Assets\Scripts\GoingHome.cs" />
+     <Compile Include="Assets\Scripts\HamletAndHoratioText.cs" />
+     <Compile Include="Assets\Scripts\JulietBlockText.cs" />
+     <Compile Include="Assets\Scripts\MadOberon.cs" />
+     <Compile Include="Assets\Scripts\MadOberonWall.cs" />
+     <Compile Include="Assets\Scripts\MazeBlockText.cs" />
      <Compile Include="Assets\Scripts\PhysicsControl.cs" />
+     <Compile Include="Assets\Scripts\RomeoAndRosalineText.cs" />
+     <Compile Include="Assets\Scripts\SignText.cs" />
      <Compile Include="Assets\Scripts\TextStuff.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
