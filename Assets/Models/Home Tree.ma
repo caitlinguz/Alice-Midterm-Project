@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: Home Tree.ma
-//Last modified: Mon, Mar 09, 2015 02:48:41 AM
+//Last modified: Mon, Mar 09, 2015 04:12:41 PM
 //Codeset: UTF-8
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Mac OS X 10.9.2";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -42.760953354638971 22.794834798749562 32.10022644949175 ;
+	setAttr ".t" -type "double3" -37.622630556727884 20.474504877091668 28.056765122274523 ;
 	setAttr ".r" -type "double3" -19.53835272959271 308.19999999996941 -5.1431298561636271e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 57.990886309620286;
+	setAttr ".coi" 51.052884318731103;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";

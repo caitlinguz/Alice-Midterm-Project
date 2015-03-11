@@ -13,7 +13,7 @@ public class GoingHome : MonoBehaviour {
 	public GameObject hamletAndHoratioTrigger;
 	HamletAndHoratioText hamletAndHoratioScript;
 	public GameObject madOberonTrigger;
-	MadOberon madOberonScript;
+	MadOberonText madOberonScript;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +32,7 @@ public class GoingHome : MonoBehaviour {
 
 		hamletAndHoratioScript = hamletAndHoratioTrigger.GetComponent<HamletAndHoratioText>();
 
-		madOberonScript = madOberonTrigger.GetComponent<MadOberon>();
+		madOberonScript = madOberonTrigger.GetComponent<MadOberonText>();
 
 		if ((romeoAndRosalineScript.unitedRomAndRos)&&(hamletAndHoratioScript.unitedHamAndHor)&&(!(madOberonScript.madOberon))){
 			firstHomeWallDown = true;

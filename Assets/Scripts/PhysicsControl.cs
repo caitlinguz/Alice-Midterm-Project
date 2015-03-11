@@ -6,7 +6,15 @@ public class PhysicsControl : MonoBehaviour {
 	public float speed = 5f;
 	public float turnSpeed = 10f;
 	public float jumpHeight = 10f;
+	public float jumpAdd = 10f;
+	public bool jumpAdded = true;
 	public Rigidbody player;
+	
+	public float jumpRate = 0.5F;
+	private float nextJump = 0.0F;
+
+	public GameObject flowerTrigger;
+	FlowerPower flowerScript;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +36,16 @@ public class PhysicsControl : MonoBehaviour {
 		transform.Rotate ( 0f, Input.GetAxis ("Horizontal") * turnSpeed, 0f);
 
 		// JUMPING
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextJump) {
+			nextJump = Time.time + jumpRate;
 			player.AddForce (transform.up * jumpHeight);
+		}
+
+		flowerScript = flowerTrigger.GetComponent<FlowerPower>();
+
+		if (( flowerScript.hasFlower == true ) && (jumpAdded)) {
+			jumpHeight = jumpHeight + jumpAdd;
+			jumpAdded = false;
 		}
 	}
 }

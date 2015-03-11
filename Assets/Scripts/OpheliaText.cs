@@ -2,25 +2,24 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class MadOberon : MonoBehaviour {
-	
-	public Collider oberonMad;
+public class OpheliaText : MonoBehaviour {
+
+	public bool hasOphelia = false;
+	public Collider opheliaActivator;
 	public Text uiText;
-	public bool madOberon = false;
-	
+
 	// Use this for initialization
 	void Start () {
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 	
+	}
+
 	void OnTriggerEnter ( Collider activator ) {
-		madOberon = true;
-		uiText.text = "A voice rings through the forest. \"PUCK! WHAT HAVE YOU DONE?\" ";
-		
+		hasOphelia = true;
+		uiText.text = "You finally found Ophelia! Hopefully she can cheer Hamlet up.";
 	}
 }

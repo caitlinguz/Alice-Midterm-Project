@@ -20,6 +20,6 @@ public class FlowerPower : MonoBehaviour {
 
 	void OnTriggerEnter ( Collider activator ) {
 		hasFlower = true;
-		uiText.text = "You got the flower! You can now make any human fall in love with the first person he sees. Also hey, Cupid's affects on the flower make your jumps springier. Sweet!";
+		uiText.text = "You got the flower! You can now make any human fall in love with the first person he sees. Also hey, Cupid's effects on the flower make your jumps springier. Sweet!";
 	}
 }

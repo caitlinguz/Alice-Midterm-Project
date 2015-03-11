@@ -19,7 +19,7 @@ public class SignText : MonoBehaviour {
 	
 	void OnTriggerEnter ( Collider activator ) {
 		
-		uiText.text = "The sign points in several directions: Pink points to Verona, Blue points to Denmark, and Green points to your fairy home world.";
+		uiText.text = "The sign points in several directions: Pink to Verona, Blue to Denmark, Green to your fairy home world, and Light Green to return back to Athens.";
 		
 	}
 }
