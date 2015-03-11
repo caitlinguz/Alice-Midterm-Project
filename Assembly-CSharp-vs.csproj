@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BlockingMidsummerLovers.cs" />
      <Compile Include="Assets\Scripts\EndText.cs" />
      <Compile Include="Assets\Scripts\FirstHomeBlock.cs" />
+     <Compile Include="Assets\Scripts\FirstWallDestroy.cs" />
      <Compile Include="Assets\Scripts\FlowerDestroy.cs" />
      <Compile Include="Assets\Scripts\FlowerPower.cs" />
      <Compile Include="Assets\Scripts\FlowerWall.cs" />

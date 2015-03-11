@@ -34,7 +34,13 @@ public class MadOberonText : MonoBehaviour {
 		}
 		else{
 			madOberon = true;
-			uiText.text = "A voice rings through the forest. \"PUCK! WHAT HAVE YOU DONE?\"";
+			uiText.text = "A voice rings through the forest. \"PUCK! WHAT HAVE YOU DONE?\"" +
+				"\n\nIt's Oberon. He sounds mad." +
+				"\n\n\"You meddlesome sprite! You've wandered too far into matters that do not concern you. " +
+				"Those humans were never supposed to fall in love! You have to fix this! " +
+				"I'll take care of those fools in Athens. " +
+				"You clean up your mess in Verona and Denmark. Seek the true star-crossed couples, and fix " +
+				"this calamity!\"";
 		}
 	}
 }
