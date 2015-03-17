@@ -36,11 +36,13 @@ public class GoingHome : MonoBehaviour {
 
 		if ((romeoAndRosalineScript.unitedRomAndRos)&&(hamletAndHoratioScript.unitedHamAndHor)&&(!(madOberonScript.madOberon))){
 			firstHomeWallDown = true;
-			uiText.text = "Now that you've sufficiently saved these humans the trouble of this whole falling in love business, you're ready to go back home.";
+			uiText.text = "Now that you've sufficiently saved those humans the trouble of this whole falling in love business, you're ready to go back home.";
 		}
 		else if (!(madOberonScript.madOberon)){
 			firstHomeWallDown = false;
-			uiText.text = "This is the path that will lead you home. But do you really want to go home yet? There's still so much fun to be had! There's probably loads of humans who could use your help!";
+			uiText.text = "This is the path that will lead back to your home, but do you really want to leave just yet? " +
+				"You've still got this magic flower, and there's so much fun to be had with it! " +
+				"There's probably loads of humans out there who could use your help!";
 		}
 		
 	}

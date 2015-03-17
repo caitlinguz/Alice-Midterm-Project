@@ -32,7 +32,7 @@ public class MazeBlockText : MonoBehaviour {
 		}
 		
 		else if (goingHomeScript.firstHomeWallDown){
-			uiText.text = "The person Hamlet is supposed to fall in love with is in here. Looks like you absolutely have to do this maze.";
+			uiText.text = "The person Hamlet is supposed to fall in love with is in here. Looks like you do absolutely have to do this maze.";
 		}
 		else{
 		uiText.text = "This maze looks awful. You don't want to go in there unless you absolutely have to.";

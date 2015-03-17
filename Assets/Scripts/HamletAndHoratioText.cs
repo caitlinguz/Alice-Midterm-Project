@@ -28,11 +28,15 @@ public class HamletAndHoratioText : MonoBehaviour {
 		
 		if ((madOberonScript.madOberon)){
 			destroyHamlet = true;
-			uiText.text = "Oberon says Hamlet's supposed to fall in love with Ophelia, not Horatio. Really? Is he sure? Okay fine. Let's go reunite them.";
+			uiText.text = "Oberon says this guy Hamlet is supposed to fall in love with Ophelia, not Horatio. Really? " +
+				"Is he sure? Okay fine. Let's go reunite them. \n\nYou undo the love spell and pick up Hamlet while you're passing through.";
 		}
 		else{
 			unitedHamAndHor = true;
-			uiText.text = "You see a man who looks a little glum. His friend is trying to cheer him up and is talking about some ghost or something. It doesn't seem to be making the sad man any more cheerful. You know the cure for that! You and your flower make quick work of these two, and now they're very much in love!";
+			uiText.text = "You see a man who looks a little glum. His friend is trying to cheer him up and " +
+				"is talking about some ghost or something. It doesn't seem to be making the sad man any more " +
+				"cheerful. You know the cure for that! You and your flower make quick work of these two, and " +
+				"now they're very much in love!\n\nYou're awesome at this.";
 		}
 	}
 }

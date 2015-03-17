@@ -28,11 +28,16 @@ public class RomeoAndRosalineText : MonoBehaviour {
 
 		if ((madOberonScript.madOberon)){
 			destroyRomeo = true;
-			uiText.text = "So this Romeo guy apparently isn't supposed to actually fall in love with Rosaline? Well better undo that whole love flower thing.";
+			uiText.text = "So this Romeo guy apparently isn't supposed to actually fall in love with " +
+				"Rosaline? He seemed to be pretty in love with her. Well better undo that whole love " +
+				"flower thing. \n\nCome on lover-boy, let's take you to the person you're supposed to be in love " +
+				"with.";
 		}
 		else{
 			unitedRomAndRos = true;
-			uiText.text = "You see a man and a woman who look like they could use a little luck in love. A little drop from your flower gives them the push they need to fall madly in love.";
+			uiText.text = "You see a man and a woman who look like they could use a little luck " +
+				"romantically. A little drop from your flower gives them the push they need to fall madly " +
+				"in love.\n\nHow adorable.";
 		}
 	}
 }
